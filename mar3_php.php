@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title> IS448 hw#2 9.9 Kayoung Kim  </title>
+<title>Project 1</title>
 <link rel = "stylesheet" href = "mar3_style.css" />
 </head>
 <body>
