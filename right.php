@@ -152,12 +152,6 @@ if (!empty($_POST))
 			$sql = "INSERT INTO $dbTable (name, campusid, email, contactnum, classes)
 					VALUES ('$name', '$campusID', '$email', '$contactNum', '$classes')";
 
-<<<<<<< HEAD
-;
-
-
-
-=======
 			if ($conn->query($sql) === TRUE) {
 				// Success
 			} else {
@@ -167,7 +161,7 @@ if (!empty($_POST))
 
 		// At this point the student's $classesTaken variable is correct
 	}
->>>>>>> origin/master
+
 
 }
 
