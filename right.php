@@ -12,13 +12,13 @@
 <script type="text/javascript">
 	function isChecked(elem){
 		if (elem.checked)
-    {
-        alert("Im Checked");
-    }
-    else
-    {
-        alert("Im not checked");
-    }
+	    {
+	        alert("Im Checked");
+	    }
+	    else
+	    {
+	        alert("Im not checked");
+	    }
 	}
 
 	function showMe (box) {
@@ -34,7 +34,7 @@
 
 	function selected(box) {
 
-	 ;   var show = document.getElementById(box);
+	    var show = document.getElementById(box);
 		if (show.style.color == 'orange'){
 			show.style.color = 'green';
 		}	
@@ -181,7 +181,7 @@ if (!empty($_POST))
 		$_SESSION["name"] = $name;
 		$_SESSION["campusID"] = $campusID;
 		$_SESSION["classes"] = $classes;
-
+	}
 }
 
 function test_input($data) {
@@ -195,14 +195,8 @@ function test_input($data) {
 ?>
 
 
-	<form method="post" action="mar3_php.php">
-    
-
-
-
-
-	
-		
+	<form method="post" action="after.php">
+    		
  			2XX Classes<br>
  			<div id='cmsc201' style="color: orange;">
 			<input type="checkbox" name="cmsc2xx[0]" value="CMSC201" onclick="selected('cmsc201');;showMe('cmsc202');">  CMSC201  <br>
@@ -333,7 +327,7 @@ function test_input($data) {
 				<input class="400-level-box" type="checkbox" name="cmsc4xx[25]" value="CMSC466" onclick="selected('cmsc466');">  CMSC466</br> </div>
 
 				<div id='cmsc471' style="color: grey;"> 
-				<input class="400-level-box" type="checkbox" name="cmsc4xx[26]" value="CMSC471" onclick="selected('cmsc471');"showMe('cmsc493');showMe('cmsc479');showMe('cmsc478');showMe('cmsc477');">  CMSC471</br> </div> 
+				<input class="400-level-box" type="checkbox" name="cmsc4xx[26]" value="CMSC471" onclick="selected('cmsc471');"showMe('cmsc493');showMe('cmsc479');showMe('cmsc478');showMe('cmsc477');>  CMSC471</br> </div> 
 				
 	
 				
