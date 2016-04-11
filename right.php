@@ -97,6 +97,7 @@ if (!empty($_POST))
 
 	
 	if($valid) {
+		session_start();
 		$dbHost = "localhost";
 		$dbName = "scripting";
 		$dbUser = "ikirk";
@@ -177,8 +178,9 @@ if (!empty($_POST))
 		}
 		
 		// At this point the student's $classesTaken variable is correct
-	
-
+		$_SESSION["name"] = $name;
+		$_SESSION["campusID"] = $campusID;
+		$_SESSION["classes"] = $classes;
 
 }
 
