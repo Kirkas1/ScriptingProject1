@@ -95,7 +95,7 @@ if (!empty($_POST))
 		$valid = FALSE;
 	}
 
-	/*
+	
 	if($valid) {
 		$dbHost = "localhost";
 		$dbName = "scripting";
@@ -125,7 +125,6 @@ if (!empty($_POST))
 		    // output data of each row
 	    	while($row = $result->fetch_assoc()) {
 		        if ($name == $row["name"] || $campusID == $row["campusID"]) {
-		        	echo 'Match!<br>';
 		        	$inDB = TRUE;
 		    	}
 		    }
@@ -170,18 +169,13 @@ if (!empty($_POST))
 			$sql = "INSERT INTO $dbTable (name, campusid, email, contactnum, classes)
 					VALUES ('$name', '$campusID', '$email', '$contactNum', '$classes')";
 
-
-
-
-
-
 			if ($conn->query($sql) === TRUE) {
 				// Success
 			} else {
 				// Fail
 			}
 		}
-		*/
+		
 		// At this point the student's $classesTaken variable is correct
 	
 
@@ -390,6 +384,7 @@ function test_input($data) {
 		
 	</div> <br/><br/><br/>
 
+	<input type="submit" name="" value="Submit">
 	</form>
 
 
