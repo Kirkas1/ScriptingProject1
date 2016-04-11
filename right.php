@@ -80,6 +80,7 @@ if (!empty($_POST))
 
 	/*
 	if($valid) {
+		session_start();
 		$dbHost = "localhost";
 		$dbName = "scripting";
 		$dbUser = "ikirk";
@@ -153,11 +154,14 @@ if (!empty($_POST))
 			$sql = "INSERT INTO $dbTable (name, campusid, email, contactnum, classes)
 					VALUES ('$name', '$campusID', '$email', '$contactNum', '$classes')";
 
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> cde40d94d4a71df766ebdf65f3424099b3a3ad3b
 			if ($conn->query($sql) === TRUE) {
 				// Success
 			} else {
@@ -166,7 +170,12 @@ if (!empty($_POST))
 		}
 		*/
 		// At this point the student's $classesTaken variable is correct
-	
+
+		$_SESSION["name"] = $name;
+		$_SESSION["campusID"] = $campusID;
+		$_SESSION["classes"] = $classes;
+	}
+
 
 
 }
@@ -182,13 +191,7 @@ function test_input($data) {
 ?>
 
 
-	<form method="post" action="mar3_php.php">
-    
-
-
-
-
-	
+	<form method="post" action="after.php">
 		
  			2XX Classes<br>
 			<input type="checkbox" name="cmsc2xx[0]" value="CMSC201" onclick="showMe('cmsc201');">  CMSC201  <br>
