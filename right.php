@@ -79,6 +79,7 @@ if (!empty($_POST))
 	}
 
 	if($valid) {
+		session_start();
 		$dbHost = "localhost";
 		$dbName = "scripting";
 		$dbUser = "ikirk";
@@ -160,6 +161,9 @@ if (!empty($_POST))
 		}
 
 		// At this point the student's $classesTaken variable is correct
+		$_SESSION["name"] = $name;
+		$_SESSION["campusID"] = $campusID;
+		$_SESSION["classes"] = $classes;
 	}
 
 
@@ -176,13 +180,7 @@ function test_input($data) {
 ?>
 
 
-	<form method="post" action="mar3_php.php">
-    
-
-
-
-
-	
+	<form method="post" action="after.php">
 		
  			2XX Classes<br>
 			<input type="checkbox" name="cmsc2xx[0]" value="CMSC 201" onclick="showMe('cmsc201');">  CMSC 201  <br>
