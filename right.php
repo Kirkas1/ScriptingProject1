@@ -9,6 +9,31 @@
 
 <div class=""><center> WELCOME <span class="textstyleRed">COMPUTER SCIENCE</span> STUDENT</center>
 
+<script type="text/javascript">
+	function isChecked(elem){
+		if (elem.checked)
+    {
+        alert("Im Checked");
+    }
+    else
+    {
+        alert("Im not checked");
+    }
+	}
+
+	function showMe (box) {
+
+	    var show = document.getElementById(box);
+	    if(   show.style.visibility == "visible" ){
+	    	show.style.visibility = "hidden";
+	    }
+	    else{
+	    	show.style.visibility = "visible";
+		}
+}
+
+</script>
+
 
 <?php
 
@@ -51,8 +76,10 @@ if (!empty($_POST))
 	}
 
 
+;
 
-	echo "Name: $name<br>Campus ID: $CID<br>Email: $email<br>Phone Number: $number<br>";
+
+
 
 }
 function test_input($data) {
@@ -73,43 +100,31 @@ function test_input($data) {
 
 
 	
-		2XX Classes<br>
- 		<script type="text/javascript">
- 			function isChecked(elem){
- 				if (elem.checked)
-			    {
-			        alert("Im Checked");
-			    }
-			    else
-			    {
-			        alert("Im not checked");
-			    }
- 			}
-
- 			function showMe (box) {
-
-			    var show = document.getElementById(box);
-			    if(   show.style.visibility == "visible" ){
-			    	show.style.visibility = "hidden";
-			    }
-			    else{
-			    	show.style.visibility = "visible";
-				}
-			}
-
-
- 		</script>
+		
+ 			2XX Classes<br>
 			<input type="checkbox" name="cmsc2xx[0]" value="CMSC 201" onclick="showMe('cmsc201');">  CMSC 201  <br>
-			<div id='cmsc201' style="visibility: hidden;"><input type="checkbox" name="cmsc202" value="CMSC 202">  CMSC 202  <br>
-			<input type="checkbox" name="cmsc203" value="CMSC 203" >  CMSC 203  <br> </div>
+			<div id='cmsc201' style="visibility: hidden;">
+				<input type="checkbox" name="cmsc202" value="CMSC 202" onclick="showMe('cmsc304');showMe('cmsc486');">  CMSC 202  <br>
+				<input type="checkbox" name="cmsc203" value="CMSC 203" >  CMSC 203  <br> 
+			</div>
+
 			<input type="checkbox" name="cmsc2xx[3]" value="CMSC 232">  CMSC 232  <br>
 			<input type="checkbox" name="cmsc2xx[4]" value="CMSC 291">  CMSC 291  <br>
 			<input type="checkbox" name="cmsc2xx[5]" value="CMSC 299">  CMSC 299  <br>
 
 	3XX Classes<br>
  		
-			<input type="checkbox" name="cmsc3xx[0]" value="CMSC 304">  CMSC 304  <br> 
-			<input type="checkbox" name="cmsc3xx[1]" value="CMSC 313">  CMSC 313  <br> 
+ 			<div id='cmsc304' style="visibility: hidden;">
+				<input type="checkbox" name="cmsc3xx[0]" value="CMSC 304">  CMSC 304  <br> 
+			</div>
+			
+
+ 			<div id='cmsc304' style="visibility: hidden;">
+				<input type="checkbox" name="cmsc3xx[1]" value="CMSC 313">  CMSC 313  <br> 
+			</div>
+			
+
+ 			<div id='cmsc304' style="visibility: hidden;">
 			<input type="checkbox" name="cmsc3xx[2]" value="CMSC 331">  CMSC 331  <br> 
 			<input type="checkbox" name="cmsc3xx[3]" value="CMSC 341">  CMSC 341  <br> 
 			<input type="checkbox" name="cmsc3xx[4]" value="CMSC 352">  CMSC 352  <br> 
@@ -122,6 +137,7 @@ function test_input($data) {
 	
 
 			
+				<div id='cmsc304' style="visibility: hidden;">
 				<input class="400-level-box" type="checkbox" name="cmsc4xx[0]" value="CMSC 411">  CMSC 411</br> 
 				<input class="400-level-box" type="checkbox" name="cmsc4xx[1]" value="CMSC 421">  CMSC 421</br> 
 				<input class="400-level-box" type="checkbox" name="cmsc4xx[2]" value="CMSC 426">  CMSC 426</br> 
@@ -166,7 +182,11 @@ function test_input($data) {
 			<input class="400-level-box" type="checkbox" name="cmsc4xx[33]" value="CMSC 481">  CMSC 481</br> 
 			<input class="400-level-box" type="checkbox" name="cmsc4xx[34]" value="CMSC 483">  CMSC 483</br> 
 			<input class="400-level-box" type="checkbox" name="cmsc4xx[35]" value="CMSC 484">  CMSC 484</br> 
-			<input class="400-level-box" type="checkbox" name="cmsc4xx[36]" value="CMSC 486">  CMSC 486</br> 
+
+			<div id='cmsc486' style="visibility: hidden;">
+				<input class="400-level-box" type="checkbox" name="cmsc4xx[36]" value="CMSC 486">  CMSC 486</br> 
+			</div>
+			
 			<input class="400-level-box" type="checkbox" name="cmsc4xx[37]" value="CMSC 487">  CMSC 487</br> 
 			<input class="400-level-box" type="checkbox" name="cmsc4xx[38]" value="CMSC 491">  CMSC 491</br> 
 			<input class="400-level-box" type="checkbox" name="cmsc4xx[39]" value="CMSC 493">  CMSC 493</br> 
