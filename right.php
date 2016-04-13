@@ -8,8 +8,6 @@
 </head>
 <body class="right">
 
-<div class=""><center> WELCOME <span class="textstyleRed">COMPUTER SCIENCE</span> STUDENT</center>
-
 <script type="text/javascript">
 	function isChecked(elem){
 		if (elem.checked)
@@ -220,6 +218,8 @@ if (!empty($_POST))
 			}
 		}
 
+		$nameUpper = strtoupper($name);
+		echo "<br><div><center> WELCOME <span class='textstyleRed'>$nameUpper</span></center><br>";
 		session_start();
 		// At this point the student's $classesTaken variable is correct
 		$_SESSION["name"] = $name;
