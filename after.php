@@ -28,7 +28,7 @@
 
 
 	foreach($_POST as $class) {
-		if($class != "submit") {
+		if($class != "Submit") {
 			if(!(strpos($classes, $class) !== false)) {
 				$classes .= $class . " ";
 			}
