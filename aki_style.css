@@ -30,7 +30,7 @@ body.left{
 }
 
 body.right{
-	background-color:#F0F0F0 ;
+	background-color:#F8F8F8;
 	font-family:Georgia, "Times New Roman", Times, serif;
 	font-style:normal;
 	margin-left: 0px;
@@ -57,6 +57,9 @@ span.textstyleDescription{
 	color: grey;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: 10px;
+	text-shadow: none;
+	letter-spacing: normal;
+
 }	
 div.title1{
 	height: 30px;
@@ -82,7 +85,8 @@ div.content1{
 	font-size: 18px;
 	vertical-align: top;
 	text-indent: 15px;
-	text-align: 
+	font-family: Impact, Charcoal, sans-serif;
+	letter-spacing: 2px;
 }
 
 input[type="checkbox"] {
@@ -139,6 +143,16 @@ input[type="checkbox"]:checked + label{
 	background-color : gold;
 
 }
+.btn-style2{
+	border : solid 0px #ffffff;
+	font-size : 16px;
+	font-family: Impact, Charcoal, sans-serif;
+	color : black;
+	padding : 7px 20px;
+	background-color : gold;
+	width: 25%;
+	margin-left: 37px;
+3
 
 .dropbtn {
 
