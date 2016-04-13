@@ -126,9 +126,9 @@ if (!empty($_POST))
 		$valid = FALSE;
 	}
 
-	/*
+	
 	if($valid) {
-		$dbHost = "localhost";
+		$dbHost = "10.200.6.30";
 		$dbName = "scripting";
 		$dbUser = "ikirk";
 		$dbPassword = "umbc";
@@ -174,48 +174,21 @@ if (!empty($_POST))
 					}
 				}
 			} 
-		} else {
-			$cmsc2xx=$_POST["cmsc2xx"];
-			$cmsc3xx=$_POST["cmsc3xx"];
-			$cmsc4xx=$_POST["cmsc4xx"];
-
-			for ($x = 0; $x <= 6 ; $x++) {
-				if(sizeof($cmsc2xx[$x]) > 0){
-					$classes .= $cmsc2xx[$x] . " ";
-				}
-			}
-
-			for ($y = 0; $y <= 6 ; $y++) {
-				if(sizeof($cmsc3xx[$y]) > 0){
-					$classes .= $cmsc3xx[$y] . " ";
-				}
-			}
-			
-			for ($z = 0; $z <= 42 ; $z++) {
-				if(sizeof($cmsc4xx[$z]) > 0){
-					$classes .= $cmsc4xx[$z] . " ";
-				}
-			}
-			
-			
-			$sql = "INSERT INTO $dbTable (name, campusid, email, contactnum, classes)
-					VALUES ('$name', '$campusID', '$email', '$contactNum', '$classes')";
-
-
-
-
-
-
-			if ($conn->query($sql) === TRUE) {
-				// Success
-			} else {
-				// Fail
+			foreach($classesTaken as $class) {
+				$classes .= $class . " ";
 			}
 		}
-		*/
-		// At this point the student's $classesTaken variable is correct
-	
 
+		session_start();
+		// At this point the student's $classesTaken variable is correct
+		$_SESSION["name"] = $name;
+		$_SESSION["campusID"] = $campusID;
+		$_SESSION["email"] = $email;
+		$_SESSION["contactNum"] = $contactNum;
+		$_SESSION["classes"] = $classes;
+		$_SESSION["inDB"] = $inDB;
+		
+	}
 
 }
 
@@ -230,7 +203,7 @@ function test_input($data) {
 ?>
 
 
-	<form method="post" action="mar3_php.php" class="formStyle1">
+	<form method="post" action="after.php" class="formStyle1">
     
 
 
@@ -242,6 +215,7 @@ function test_input($data) {
 <div class="title1"><span class="textstyleRed">2XX</span> Lv. CLASSES</div>
 
  			<div id='cmsc201' class='content1' class='content1' style="color: orange;" >
+
 			<input type="checkbox" dependency='0' name="cmsc2xx[0]" value="CMSC201" id="201" onclick="selected('cmsc201');showMe('cmsc202');"><label for="201"></label>  CMSC201  <br></div>
 			
 			<div id='cmsc202' class='content1' style="color: grey;">
@@ -259,19 +233,25 @@ function test_input($data) {
 			<div id='cmsc299' class='content1' style="color: orange;">
 			<input type="checkbox" dependency='0' name="cmsc2xx[5]" value="CMSC299" id="299" onclick="selected('cmsc299');"><label for="299"></label>  CMSC299  <br> </div>
 
+
 	<div class="title1"><span class="textstyleRed">3XX</span> Lv. CLASSES</div>
  		
  			<div id='cmsc304' class='content1' style="color: grey;">
+
 				<input type="checkbox" dependency='0' disabled name="cmsc3xx[0]" value="CMSC304" id="304" onclick="selected('cmsc304');lockprev('cmsc202', 'cmsc304');"><label for="304"></label>  CMSC304  <br> 
+
 			</div>
 			
 
  			<div id='cmsc313' class='content1' style="color: grey;">
+
 				<input type="checkbox" dependency='0' disabled name="cmsc3xx[1]" value="CMSC313" id="313" onclick="selected('cmsc313');lockprev('cmsc203', 'cmsc313');showMe('cmsc411');"><label for="313"></label>  CMSC313 (required) <br> 
+
 			</div>
 			
 
  			<div id='cmsc331' class='content1' style="color: grey;">
+
 				<input type="checkbox" dependency='0' disabled name="cmsc3xx[2]" value="CMSC331" id="331" onclick="selected('cmsc331');lockprev('cmsc203', 'cmsc331');showMe('cmsc433');showMe('cmsc432');showMe('cmsc473');showMe('cmsc431');"><label for="331"></label>  CMSC331  <br> 
 			</div>
 
@@ -372,7 +352,7 @@ function test_input($data) {
 
 				<div id='cmsc471' class='content1' style="color: grey;"> 
 				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[26]" value="CMSC471" id="471" onclick="selected('cmsc471');lockprev('cmsc341', 'cmsc471');showMe('cmsc493');showMe('cmsc479');showMe('cmsc478');showMe('cmsc477');"><label for="471"></label>  CMSC471</br> </div> 
-				
+
 	
 				
 				<div id='cmsc473' class='content1' style="color: grey;">
@@ -421,12 +401,22 @@ function test_input($data) {
 		
 				<div id='cmsc499' class='content1' style="color: orange;">
 				<input class="400-level-box" type="checkbox" dependency='0' name="cmsc4xx[42]" value="CMSC499" id="499" onclick="selected('cmsc499');"><label for="499"></label>  CMSC499</br> </div> 
+
 		
 	</div> <br/><br/><br/>
 
+	<input type="submit" name="" value="submit">
 	</form>
 
+	<script>
+       var classes = "<?php Print($classes); ?>";
+       var classArr = classes.split(" ");
+       for(var i = 0; i < classArr.length; i++) {
+
+       }
+	</script>
 
 
 </body>
+
 </html>
