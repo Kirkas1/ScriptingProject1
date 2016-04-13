@@ -99,7 +99,7 @@ if (!empty($_POST))
 		$valid = FALSE;
 	}
 
-	/*
+	
 	if($valid) {
 		$dbHost = "localhost";
 		$dbName = "scripting";
@@ -147,48 +147,16 @@ if (!empty($_POST))
 					}
 				}
 			} 
-		} else {
-			$cmsc2xx=$_POST["cmsc2xx"];
-			$cmsc3xx=$_POST["cmsc3xx"];
-			$cmsc4xx=$_POST["cmsc4xx"];
-
-			for ($x = 0; $x <= 6 ; $x++) {
-				if(sizeof($cmsc2xx[$x]) > 0){
-					$classes .= $cmsc2xx[$x] . " ";
-				}
-			}
-
-			for ($y = 0; $y <= 6 ; $y++) {
-				if(sizeof($cmsc3xx[$y]) > 0){
-					$classes .= $cmsc3xx[$y] . " ";
-				}
-			}
-			
-			for ($z = 0; $z <= 42 ; $z++) {
-				if(sizeof($cmsc4xx[$z]) > 0){
-					$classes .= $cmsc4xx[$z] . " ";
-				}
-			}
-			
-			
-			$sql = "INSERT INTO $dbTable (name, campusid, email, contactnum, classes)
-					VALUES ('$name', '$campusID', '$email', '$contactNum', '$classes')";
-
-
-
-
-
-
-			if ($conn->query($sql) === TRUE) {
-				// Success
-			} else {
-				// Fail
+			foreach($classesTaken as $class) {
+				$classes .= $class . " ";
 			}
 		}
-		*/
-		// At this point the student's $classesTaken variable is correct
-	
 
+		// At this point the student's $classesTaken variable is correct
+		$_SESSION["name"] = $name;
+		$_SESSION["campusID"] = $campusID;
+		$_SESSION["classes"] = $classes;
+	}
 
 }
 
@@ -203,7 +171,7 @@ function test_input($data) {
 ?>
 
 
-	<form method="post" action="mar3_php.php" class="formStyle1">
+	<form method="post" action="after.php" class="formStyle1">
     
 
 
