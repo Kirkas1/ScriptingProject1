@@ -182,7 +182,7 @@ if (!empty($_POST))
 		if ($result->num_rows > 0) {
 		    // output data of each row
 	    	while($row = $result->fetch_assoc()) {
-		        if ($name == $row["name"] || $campusID == $row["campusID"]) {
+		        if ($name == $row["name"] || $campusID == $row["campusid"]) {
 		        	$inDB = TRUE;
 		    	}
 		    }
