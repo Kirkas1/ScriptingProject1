@@ -1,0 +1,71 @@
+
+
+CMSC 201 <span class="textstyleDescription">: (4.00) Computer Science I for Majors </span> <br>
+CMSC 202 <span class="textstyleDescription">: (4.00) Computer Science II for Majors </span> <br>
+CMSC 203 <span class="textstyleDescription">: (3.00) Discrete Structures </span> <br>
+
+CMSC 232 <span class="textstyleDescription">: (2.00) Advanced Java Techniques </span> <br>
+CMSC 291 <span class="textstyleDescription">: (1.00 - 4.00) Special Topics in Computer Science </span> <br>
+
+CMSC 299 <span class="textstyleDescription">: (1.00 - 4.00) Independent Study in Computer Science </span> <br>
+CMSC 304 <span class="textstyleDescription">: (3.00) Social and Ethical Issues in Information Technology </span> <br>
+CMSC 313 <span class="textstyleDescription">: (3.00) Computer Organization & Assembly Language Program. </span> <br>
+
+
+CMSC 331 <span class="textstyleDescription">: (3.00) Principles of Programming Language </span> <br>
+CMSC 341 <span class="textstyleDescription">: (3.00) Data Structures </span> <br>
+CMSC 352 <span class="textstyleDescription">: (3.00) Women, Gender, and Information Technology </span> <br>
+CMSC 391 <span class="textstyleDescription">: (1.00 - 4.00) Special Topics in Computer Science </span> <br>
+CMSC 404 <span class="textstyleDescription">: (3.00) The History of Computers and Computing </span> <br>
+
+CMSC 411 <span class="textstyleDescription">: (3.00) Computer Architecture </span> <br>
+CMSC 421 <span class="textstyleDescription">: (3.00) Principles of Operating Systems </span> <br>
+CMSC 426 <span class="textstyleDescription">: (3.00) Principles of Computer Security </span> <br>
+CMSC 427 <span class="textstyleDescription">: (3.00) Wearable Computing </span> <br>
+CMSC 431 <span class="textstyleDescription">: (3.00) Compiler Design Principles </span> <br>
+CMSC 432 <span class="textstyleDescription">: (3.00) Object-Oriented Programming Languages and Systems </span> <br>
+
+
+CMSC 433 <span class="textstyleDescription">: (3.00) Scripting Languages </span> <br>
+CMSC 435 <span class="textstyleDescription">: (3.00) Computer Graphics </span> <br>
+CMSC 436 <span class="textstyleDescription">: (3.00) Data Visualization </span> <br>
+CMSC 437 <span class="textstyleDescription">: (3.00) Graphical User Interface Programming </span> <br>
+CMSC 441 <span class="textstyleDescription">: (3.00) Design and Analysis of Algorithms. </span> <br>
+CMSC 442 <span class="textstyleDescription">: (3.00) Information and Coding Theory </span> <br>
+CMSC 443 <span class="textstyleDescription">: (3.00) Cryptology </span> <br>
+
+
+CMSC 444 <span class="textstyleDescription">: (3.00) Information Assurance </span> <br>
+CMSC 446 <span class="textstyleDescription">: (3.00) Introduction to Design Patterns </span> <br>
+CMSC 447 <span class="textstyleDescription">: (3.00) Software Design and Development </span> <br>
+CMSC 448 <span class="textstyleDescription">: (3.00) Software Engineering II </span> <br>
+CMSC 451 <span class="textstyleDescription">: (3.00) Automata Theory and Formal Languages </span> <br>
+CMSC 452 <span class="textstyleDescription">: (3.00) Logic for Computer Science </span> <br>
+CMSC 453 <span class="textstyleDescription">: (3.00) Applied Combinatorics and Graph Theory </span> <br>
+CMSC 455 <span class="textstyleDescription">: (3.00) Numerical Computations </span> <br>
+CMSC 456 <span class="textstyleDescription">: (3.00) Symbolic Computation </span> <br>
+CMSC 457 <span class="textstyleDescription">: (3.00) Quantum Computation </span> <br>
+
+
+CMSC 461 <span class="textstyleDescription">: (3.00) Database Management Systems </span> <br>
+CMSC 465 <span class="textstyleDescription">: (3.00) Introduction to Electronic Commerce </span> <br>
+CMSC 466 <span class="textstyleDescription">: (3.00) Electronic Commerce Technology </span> <br>
+CMSC 471 <span class="textstyleDescription">: (3.00) Introduction to Artificial Intelligence </span> <br>
+CMSC 473 <span class="textstyleDescription">: (3.00) Introduction to Natural Language Processing </span> <br>
+CMSC 475 <span class="textstyleDescription">: (3.00) Introduction to Neural Networks </span> <br>
+CMSC 476 <span class="textstyleDescription">: (3.00) Information Retrieval </span> <br>
+
+
+CMSC 477 <span class="textstyleDescription">: (3.00) Agent Architectures and Multi-Agent Systems </span> <br>
+CMSC 478 <span class="textstyleDescription">: (3.00) Introduction to Machine Learning </span> <br>
+CMSC 479 <span class="textstyleDescription">: (3.00) Introduction to Robotics </span> <br>
+CMSC 481 <span class="textstyleDescription">: (3.00) Computer Networks </span> <br>
+CMSC 483 <span class="textstyleDescription">: (3.00) Parallel and Distributed Processing </span> <br>
+CMSC 484 <span class="textstyleDescription">: (3.00) Java Server Technologies </span> <br>
+CMSC 486 <span class="textstyleDescription">: (3.00) Mobile Telephony Communications </span> <br>
+CMSC 487 <span class="textstyleDescription">: (3.00) Introduction To Network Security </span> <br>
+CMSC 491 <span class="textstyleDescription">: (3.00) Special Topics in Computer Science </span> <br>
+CMSC 493 <span class="textstyleDescription">: (3.00) Capstone Games Group Project </span> <br>
+CMSC 495 <span class="textstyleDescription">: (3.00) Honors Thesis </span> <br>
+CMSC 498 <span class="textstyleDescription">: (3.00) Independent Study in Computer Science for CMSC Interns and Coop Students </span> <br>
+CMSC 499 <span class="textstyleDescription">: (1.00 - 4.00) Independent Study in Computer Science </span> <br>
