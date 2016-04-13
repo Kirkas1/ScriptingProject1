@@ -73,9 +73,14 @@
 		if (prev_cbox.getAttribute('dependency').length != 1){
 			prev_show.style.color = 'blue';
 			prev_cbox.disabled = true;
+			prev_show.style.fontWeight = 'bold';
+			prev_show.style.background = 'url("http://userpages.umbc.edu/~kayoung2/CMSC433/Project/images/lock_2-24.png") no-repeat';
+			prev_show.style.backgroundPosition = "4px 4px";
 		}
 		else {
 			prev_show.style.color = 'green';
+			prev_show.style.fontWeight = 'normal';
+			prev_show.style.background = 'url("") no-repeat';
 			prev_cbox.disabled = false;
 		}
 	}
