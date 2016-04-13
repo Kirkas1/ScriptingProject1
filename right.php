@@ -455,8 +455,6 @@ function test_input($data) {
            cbox.click();
        		}
        }
-
-       }
 	</script>
 
 
