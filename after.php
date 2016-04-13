@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-	$dbHost = "localhost";
+	$dbHost = "10.200.6.30";
 	$dbName = "scripting";
 	$dbUser = "ikirk";
 	$dbPassword = "umbc";
@@ -24,22 +24,14 @@
 	$cmsc2xx=$_POST["cmsc2xx"];
 	$cmsc3xx=$_POST["cmsc3xx"];
 	$cmsc4xx=$_POST["cmsc4xx"];
-
-	for ($x = 0; $x <= 6 ; $x++) {
-		if(sizeof($cmsc2xx[$x]) > 0 && !in_array($cmsc2xx[$x], $classesTaken)){
-			$classes .= $cmsc2xx[$x] . " ";
-		}
-	}
-
-	for ($y = 0; $y <= 6 ; $y++) {
-		if(sizeof($cmsc3xx[$y]) > 0 && !in_array($cmsc3xx[$x], $classesTaken)){
-			$classes .= $cmsc3xx[$y] . " ";
-		}
-	}
 	
-	for ($z = 0; $z <= 42 ; $z++) {
-		if(sizeof($cmsc4xx[$z]) > 0 && !in_array($cmsc4xx[$x], $classesTaken)){
-			$classes .= $cmsc4xx[$z] . " ";
+
+
+	foreach($_POST as $class) {
+		if($class != "submit") {
+			if(!(strpos($classes, $class) !== false)) {
+				$classes .= $class . " ";
+			}
 		}
 	}
 
@@ -50,8 +42,14 @@
 				VALUES (\"$name\", \"$campusID\", \"$email\", \"$contactNum\", \"$classes\")";
 	}
 	if ($conn->query($sql) === TRUE) {
-	    echo "Record updated successfully";
+	    echo "<center><h3 style='color: grey;'>Record updated successfully</h3></center>";
 	} else {
 	    echo "Error updating record: " . $conn->error;
 	}
+
+	session_unset();
+	session_destroy();
+
+	header( "refresh:4; url=right.php" ); /* Redirect browser */
+	exit();
  ?>
