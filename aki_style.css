@@ -89,6 +89,7 @@ input[type="checkbox"] {
     top: 0;
     left: 0;
     z-index: 2;
+    display: none;
 }
 input[type="checkbox"] + label{
     background:url('images/toggle_off-26.png') no-repeat;
