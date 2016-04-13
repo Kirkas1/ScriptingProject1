@@ -80,6 +80,34 @@
 		}
 	}
 
+	function tworeq(require, box){
+		var this_show = document.getElementById(box);
+		var this_cbox = document.getElementById(box.replace(/\D/g,''));
+
+		var prev_show = document.getElementById(require);
+		var prev_cbox = document.getElementById(require.replace(/\D/g,''));
+
+		var req = prev_cbox.getAttribute('req');
+
+		if(this_cbox.checked != true){
+			prev_cbox.setAttribute('req', req + 0);
+		}
+		else{
+			req = req.substring(0, req.length - 1);
+			prev_cbox.setAttribute('req', req);
+		}
+
+		if (prev_cbox.getAttribute('req').length != 1){
+			prev_show.style.color = 'grey';
+			prev_cbox.checked = false;
+			prev_cbox.disabled = true;
+		}
+		else {
+			prev_show.style.color = 'orange';
+			prev_cbox.disabled = false;
+		}
+
+	}
 </script>
 
 
@@ -245,18 +273,18 @@ function test_input($data) {
 
  			<div id='cmsc313' class='content1' style="color: grey;">
 
-				<input type="checkbox" dependency='0' disabled name="cmsc3xx[1]" value="CMSC313" id="313" onclick="selected('cmsc313');lockprev('cmsc203', 'cmsc313');showMe('cmsc411');"><label for="313"></label>  CMSC313 (required) <br> 
+				<input type="checkbox" dependency='0' disabled name="cmsc3xx[1]" value="CMSC313" id="313" onclick="selected('cmsc313');lockprev('cmsc203', 'cmsc313');tworeq('cmsc435', 'cmsc313');tworeq('cmsc421', 'cmsc313');showMe('cmsc411');"><label for="313"></label>  CMSC313 (required) <br> 
 
 			</div>
 			
 
  			<div id='cmsc331' class='content1' style="color: grey;">
 
-				<input type="checkbox" dependency='0' disabled name="cmsc3xx[2]" value="CMSC331" id="331" onclick="selected('cmsc331');lockprev('cmsc203', 'cmsc331');showMe('cmsc433');showMe('cmsc432');showMe('cmsc473');showMe('cmsc431');"><label for="331"></label>  CMSC331  <br> 
+				<input type="checkbox" dependency='0' disabled name="cmsc3xx[2]" value="CMSC331" id="331" onclick="selected('cmsc331');lockprev('cmsc203', 'cmsc331');tworeq('cmsc431', 'cmsc331');showMe('cmsc433');showMe('cmsc432');showMe('cmsc473');"><label for="331"></label>  CMSC331  <br> 
 			</div>
 
 			<div id='cmsc341' class='content1' style="color: grey;">
-			<input type="checkbox" dependency='0' disabled name="cmsc3xx[3]" value="CMSC341" id="341" onclick="selected('cmsc341');lockprev('cmsc203', 'cmsc341'); showMe('cmsc427'); showMe('cmsc436');showMe('cmsc471'); showMe('cmsc437'); showMe('cmsc447'); showMe('cmsc441'); showMe('cmsc443'); showMe('cmsc453'); showMe('cmsc455'); showMe('cmsc456');showMe('cmsc435');showMe('cmsc476');showMe('cmsc475');showMe('cmsc421');showMe('cmsc461');showMe('cmsc481');"><label for="341"></label>  CMSC341 (required)(Needs Permission)  <br> </div>
+			<input type="checkbox" dependency='0' disabled name="cmsc3xx[3]" value="CMSC341" id="341" onclick="selected('cmsc341');lockprev('cmsc203', 'cmsc341');tworeq('cmsc421', 'cmsc341');tworeq('cmsc435', 'cmsc341'); tworeq('cmsc431', 'cmsc341');showMe('cmsc427'); showMe('cmsc436');showMe('cmsc471'); showMe('cmsc437'); showMe('cmsc447'); showMe('cmsc441'); showMe('cmsc443'); showMe('cmsc453'); showMe('cmsc455'); showMe('cmsc456');showMe('cmsc476');showMe('cmsc475');showMe('cmsc461');showMe('cmsc481');"><label for="341"></label>  CMSC341 (required)(Needs Permission)  <br> </div>
 
 			
 			<div id='cmsc352' class='content1' style="color: orange;">
@@ -276,7 +304,7 @@ function test_input($data) {
 				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[0]" value="CMSC411" id="411" onclick="selected('cmsc411');lockprev('cmsc313', 'cmsc411');"><label for="411"></label>  CMSC411 (required)</br> </div> 
 
 				<div id='cmsc421' class='content1' style="color: grey;">
-				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[1]" value="CMSC421" id="421" onclick="selected('cmsc421');lockprev('cmsc313', 'cmsc421');lockprev('cmsc341', 'cmsc421');showMe('cmsc483');showMe('cmsc426');"><label for="421"></label>  CMSC421 (required)</br> </div> 
+				<input class="400-level-box" type="checkbox" dependency='0' req='000' disabled name="cmsc4xx[1]" value="CMSC421" id="421" onclick="selected('cmsc421');lockprev('cmsc313', 'cmsc421');lockprev('cmsc341', 'cmsc421');tworeq('cmsc487', 'cmsc421');showMe('cmsc483');showMe('cmsc426');"><label for="421"></label>  CMSC421 (required)</br> </div> 
 
 				<div id='cmsc426' class='content1' style="color: grey;">
 				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[2]" value="CMSC426" id="426" onclick="selected('cmsc426');lockprev('cmsc421', 'cmsc426');"><label for="426"></label>  CMSC426</br> </div> 
@@ -285,7 +313,7 @@ function test_input($data) {
 				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[3]" value="CMSC427" id="427" onclick="selected('cmsc427');lockprev('cmsc341', 'cmsc427');"><label for="427"></label>  CMSC427</br> </div> 
 				
 				<div id='cmsc431' class='content1' style="color: grey;">
-				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[4]" value="CMSC431" id="431" onclick="selected('cmsc431');lockprev('cmsc331', 'cmsc431');lockprev('cmsc341', 'cmsc431');"><label for="431"></label>  CMSC431 *requires 341 as well</br> </div> 
+				<input class="400-level-box" type="checkbox" dependency='0' req='000' disabled name="cmsc4xx[4]" value="CMSC431" id="431" onclick="selected('cmsc431');lockprev('cmsc331', 'cmsc431');lockprev('cmsc341', 'cmsc431');"><label for="431"></label>  CMSC431 *requires 341 as well</br> </div> 
 				
 				<div id='cmsc432' class='content1' style="color: grey;">
 				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[5]" value="CMSC432" id="432" onclick="selected('cmsc432');lockprev('cmsc331', 'cmsc432');"><label for="432"></label>  CMSC432</br> </div> 
@@ -294,7 +322,7 @@ function test_input($data) {
 				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[6]" value="CMSC433" id="433" onclick="selected('cmsc433');lockprev('cmsc331', 'cmsc433');"><label for="433"></label>  CMSC433</br> </div> 
 				
 				<div id='cmsc435' class='content1' style="color: grey;">
-				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[7]" value="CMSC435" id="435" onclick="selected('cmsc435');lockprev('cmsc313', 'cmsc435');lockprev('cmsc341', 'cmsc435');"><label for="435"></label>  CMSC435 *requires 313 and 341<br> </div> 
+				<input class="400-level-box" type="checkbox" dependency='0' req='000' disabled name="cmsc4xx[7]" value="CMSC435" id="435" onclick="selected('cmsc435');lockprev('cmsc313', 'cmsc435');lockprev('cmsc341', 'cmsc435');tworeq('cmsc493', 'cmsc435');"><label for="435"></label>  CMSC435 *requires 313 and 341<br> </div> 
 				
 				<div id='cmsc436' class='content1' style="color: grey;">
 				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[8]" value="CMSC436" id="436" onclick="selected('cmsc436');lockprev('cmsc341', 'cmsc436');"><label for="436"></label>  CMSC436</br> </div> 
@@ -342,16 +370,16 @@ function test_input($data) {
 				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[22]" value="CMSC457" id="457" onclick="selected('cmsc457');lockprev('cmsc203', 'cmsc457');"><label for="457"></label>  CMSC457</br> </div> 
 				
 				<div id='cmsc461' class='content1' style="color: grey;">
-				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[23]" value="CMSC461" id="461" onclick="selected('cmsc461');lockprev('cmsc341', 'cmsc461');"><label for="461"></label>  CMSC461 </div> 
+				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[23]" value="CMSC461" id="461" onclick="selected('cmsc461');lockprev('cmsc341', 'cmsc461');tworeq('cmsc465', 'cmsc461');tworeq('cmsc466', 'cmsc461');"><label for="461"></label>  CMSC461 </div> 
 							
 				<div id='cmsc465' class='content1' style="color: grey;">
-				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[24]" value="CMSC465" id="465" onclick="selected('cmsc465');lockprev('cmsc481', 'cmsc465');lockprev('cmsc461', 'cmsc465');"><label for="465"></label>  CMSC465 *requires both 481 and 461</br> </div> 
+				<input class="400-level-box" type="checkbox" dependency='0' req='000' disabled name="cmsc4xx[24]" value="CMSC465" id="465" onclick="selected('cmsc465');lockprev('cmsc481', 'cmsc465');lockprev('cmsc461', 'cmsc465');"><label for="465"></label>  CMSC465 *requires both 481 and 461</br> </div> 
 				
 				<div id='cmsc466' class='content1' style="color: grey;">
-				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[25]" value="CMSC466" id="466" onclick="selected('cmsc466');lockprev('cmsc481', 'cmsc466');lockprev('cmsc461', 'cmsc466');"><label for="466"></label>  CMSC466</br> </div>
+				<input class="400-level-box" type="checkbox" dependency='0' req='000' disabled name="cmsc4xx[25]" value="CMSC466" id="466" onclick="selected('cmsc466');lockprev('cmsc481', 'cmsc466');lockprev('cmsc461', 'cmsc466');"><label for="466"></label>  CMSC466</br> </div>
 
 				<div id='cmsc471' class='content1' style="color: grey;"> 
-				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[26]" value="CMSC471" id="471" onclick="selected('cmsc471');lockprev('cmsc341', 'cmsc471');showMe('cmsc493');showMe('cmsc479');showMe('cmsc478');showMe('cmsc477');"><label for="471"></label>  CMSC471</br> </div> 
+				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[26]" value="CMSC471" id="471" onclick="selected('cmsc471');lockprev('cmsc341', 'cmsc471');tworeq('cmsc493', 'cmsc471');showMe('cmsc479');showMe('cmsc478');showMe('cmsc477');"><label for="471"></label>  CMSC471</br> </div> 
 
 	
 				
@@ -374,7 +402,7 @@ function test_input($data) {
 				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[32]" value="CMSC479" id="479" onclick="selected('cmsc479');lockprev('cmsc471', 'cmsc479');"><label for="479"></label>  CMSC479</br> </div> 
 
 				<div id='cmsc481' class='content1' style="color: grey;">
-				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[33]" value="CMSC481" id="481" onclick="selected('cmsc481');lockprev('cmsc341', 'cmsc481');showMe('cmsc487');showMe('cmsc465');showMe('cmsc466');showme('cmsc487');"><label for="481"></label>  CMSC481</br> </div> 
+				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[33]" value="CMSC481" id="481" onclick="selected('cmsc481');lockprev('cmsc341', 'cmsc481');tworeq('cmsc487', 'cmsc481');tworeq('cmsc466', 'cmsc481');tworeq('cmsc465', 'cmsc481');"><label for="481"></label>  CMSC481</br> </div> 
 				<div id='cmsc483' class='content1' style="color: grey;">
 				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[34]" value="CMSC483" id="483" onclick="selected('cmsc483');lockprev('cmsc421', 'cmsc483');"><label for="483"></label>  CMSC483</br> </div> 
 			
@@ -386,12 +414,12 @@ function test_input($data) {
 				</div>
 				
 				<div id='cmsc487' class='content1' style="color: grey;">
-				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[37]" value="CMSC487" id="487" onclick="selected('cmsc487');lockprev('cmsc421', 'cmsc487');lockprev('cmsc481', 'cmsc487');"><label for="487"></label>  CMSC487 *requires both 421 and 481</br> </div> 
+				<input class="400-level-box" type="checkbox" dependency='0' req='000' disabled name="cmsc4xx[37]" value="CMSC487" id="487" onclick="selected('cmsc487');lockprev('cmsc421', 'cmsc487');lockprev('cmsc481', 'cmsc487');"><label for="487"></label>  CMSC487 *requires both 421 and 481</br> </div> 
 			
 				<div id='cmsc491' class='content1' style="color: orange;">
 				<input class="400-level-box" type="checkbox" dependency='0' name="cmsc4xx[38]" value="CMSC491" id="491" onclick="selected('cmsc491');"><label for="491"></label>  CMSC491</br> </div> 
 				<div id='cmsc493' class='content1' style="color: grey;">
-				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[39]" value="CMSC493" id="493" onclick="selected('cmsc493');lockprev('cmsc471', 'cmsc491');lockprev('cmsc435', 'cmsc493');"><label for="493"></label>  CMSC493 *requires both 435 and 471</br> </div> 
+				<input class="400-level-box" type="checkbox" dependency='0' req='000' disabled name="cmsc4xx[39]" value="CMSC493" id="493" onclick="selected('cmsc493');lockprev('cmsc471', 'cmsc491');lockprev('cmsc435', 'cmsc493');"><label for="493"></label>  CMSC493 *requires both 435 and 471</br> </div> 
 			
 				<div id='cmsc495' class='content1' style="color: orange;">
 				<input class="400-level-box" type="checkbox" dependency='0' name="cmsc4xx[40]" value="CMSC495" id="495" onclick="selected('cmsc495');"><label for="495"></label>  CMSC495</br> </div> 
