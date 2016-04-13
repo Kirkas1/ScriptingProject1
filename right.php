@@ -12,13 +12,13 @@
 <script type="text/javascript">
 	function isChecked(elem){
 		if (elem.checked)
-    {
-        alert("Im Checked");
-    }
-    else
-    {
-        alert("Im not checked");
-    }
+	    {
+	        alert("Im Checked");
+	    }
+	    else
+	    {
+	        alert("Im not checked");
+	    }
 	}
 
 	function showMe (box) {
@@ -35,7 +35,9 @@
 
 	function selected(box) {
 
+
 		var show = document.getElementById(box);
+
 		if (show.style.color == 'orange'){
 			show.style.color = 'green';
 		}	
@@ -98,6 +100,7 @@ if (!empty($_POST))
 
 	/*
 	if($valid) {
+		session_start();
 		$dbHost = "localhost";
 		$dbName = "scripting";
 		$dbUser = "ikirk";
@@ -184,9 +187,10 @@ if (!empty($_POST))
 		}
 		*/
 		// At this point the student's $classesTaken variable is correct
-	
-
-
+		$_SESSION["name"] = $name;
+		$_SESSION["campusID"] = $campusID;
+		$_SESSION["classes"] = $classes;
+	}
 }
 
 function test_input($data) {
@@ -200,6 +204,7 @@ function test_input($data) {
 ?>
 
 
+<<<<<<< HEAD
 	<form method="post" action="mar3_php.php" class="formStyle1">
     
 
@@ -218,6 +223,18 @@ function test_input($data) {
 				<input type="checkbox" name="cmsc202" value="CMSC202" id="202" onclick="selected('cmsc202');showMe('cmsc203');showMe('cmsc486');"><label for="202"></label>  CMSC202  <br> </div>
 			<div id='cmsc203' class='content1' style="color: grey;">
 				<input type="checkbox" name="cmsc203" value="CMSC203" id="203" onclick="selected('cmsc203');showMe('cmsc313');showMe('cmsc457');showMe('cmsc452');showMe('cmsc451');showMe('cmsc341');"><label for="203"></label>  CMSC203  <br> 
+=======
+	<form method="post" action="after.php">
+    		
+ 			2XX Classes<br>
+ 			<div id='cmsc201' style="color: orange;">
+			<input type="checkbox" name="cmsc2xx[0]" value="CMSC201" onclick="selected('cmsc201');;showMe('cmsc202');">  CMSC201  <br>
+			</div>
+			<div id='cmsc202' style="color: grey;">
+				<input type="checkbox" name="cmsc202" value="CMSC202" onclick="selected('cmsc202');showMe('cmsc304');showMe('cmsc486');showMe('cmsc203');">  CMSC202  <br> </div>
+			<div id='cmsc203' style="color: grey;">
+				<input type="checkbox" name="cmsc203" value="CMSC203" onclick="selected('cmsc203');showMe('cmsc331');showMe('cmsc313');showMe('cmsc457');showMe('cmsc452');showMe('cmsc451');showMe('cmsc341');">  CMSC203  <br> 
+>>>>>>> 8135c5116100e4a28dca8ce81c33d45f927e0ef2
 			</div>
 
 			<div id='cmsc232' class='content1' style="color: orange;">
@@ -340,8 +357,13 @@ function test_input($data) {
 				<div id='cmsc466' class='content1' style="color: grey;">
 				<input class="400-level-box" type="checkbox" name="cmsc4xx[25]" value="CMSC466" id="466" onclick="selected('cmsc466');"><label for="466"></label>  CMSC466</br> </div>
 
+<<<<<<< HEAD
 				<div id='cmsc471' class='content1' style="color: grey;"> 
 				<input class="400-level-box" type="checkbox" name="cmsc4xx[26]" value="CMSC471" id="471" onclick="selected('cmsc471');showMe('cmsc479');showMe('cmsc478');showMe('cmsc477');"><label for="471"></label>  CMSC471</br> </div> 
+=======
+				<div id='cmsc471' style="color: grey;"> 
+				<input class="400-level-box" type="checkbox" name="cmsc4xx[26]" value="CMSC471" onclick="selected('cmsc471');"showMe('cmsc493');showMe('cmsc479');showMe('cmsc478');showMe('cmsc477');>  CMSC471</br> </div> 
+>>>>>>> 8135c5116100e4a28dca8ce81c33d45f927e0ef2
 				
 	
 				
