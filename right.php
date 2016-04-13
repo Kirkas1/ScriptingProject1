@@ -198,7 +198,6 @@ if (!empty($_POST))
 		if ($result->num_rows > 0) {
 	    	while($row = $result->fetch_assoc()) {
 		        if ($name == $row["name"] || $campusID == $row["campusID"]) {
-		        	echo 'Match!<br>';
 		        	$inDB = TRUE;
 		    	}
 		    }
