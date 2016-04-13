@@ -8,6 +8,8 @@
 
 	$name = $_SESSION["name"];
 	$campusID = $_SESSION["campusID"];
+	$email = $_SESSION["email"];
+	$contactNum = $_SESSION["contactNum"];
 	$classesTaken = $_SESSION["classes"];
 
 	// Create connection
@@ -41,7 +43,12 @@
 		}
 	}
 
-	$sql = "UPDATE $dbTable SET classes=\"$classes\" WHERE name=\"$name\"";
+	if($_SESSION["inDB"]) {
+		$sql = "UPDATE $dbTable SET classes=\"$classes\" WHERE name=\"$name\"";
+	} else {
+		$sql = "INSERT INTO $dbTable (name, campusid, email, contactnum, classes)
+				VALUES (\"$name\", \"$campusID\", \"$email\", \"$contactNum\", \"$classes\")";
+	}
 	if ($conn->query($sql) === TRUE) {
 	    echo "Record updated successfully";
 	} else {
