@@ -53,7 +53,10 @@ span.textstyleGold{
 	color: gold;
 	font-weight: bold;
 }
-
+span.textstyleDescription{
+	color: grey;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}	
 div.title1{
 	height: 30px;
 	background-color: #383838;
