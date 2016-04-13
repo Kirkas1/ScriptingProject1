@@ -8,10 +8,18 @@
 </head>
 <body class="right">
 
-<div class=""><center> WELCOME <span class="textstyleRed">COMPUTER SCIENCE</span> STUDENT</center>
-
 <script type="text/javascript">
 	
+
+	function beforeSubmit() {
+        var boxes = document.getElementsByTagName('input');
+        console.log("Called");
+        for(var i = 0; i < boxes.length; i++) {
+        	if(boxes[i].checked) {
+        		boxes[i].disabled = false;
+        	}
+        }
+    }
 
 	function showMe (box) {
 
@@ -178,10 +186,8 @@ if (!empty($_POST))
 		$result = $conn->query($checkIfInDB);
 
 		if ($result->num_rows > 0) {
-		    // output data of each row
 	    	while($row = $result->fetch_assoc()) {
 		        if ($name == $row["name"] || $campusID == $row["campusID"]) {
-		        	echo 'Match!<br>';
 		        	$inDB = TRUE;
 		    	}
 		    }
@@ -204,6 +210,8 @@ if (!empty($_POST))
 			}
 		}
 
+		$nameUpper = strtoupper($name);
+		echo "<br><div><center> WELCOME <span class='textstyleRed'>$nameUpper</span></center><br>";
 		session_start();
 		// At this point the student's $classesTaken variable is correct
 		$_SESSION["name"] = $name;
@@ -228,16 +236,10 @@ function test_input($data) {
 ?>
 
 
-	<form method="post" action="after.php" class="formStyle1">
-    
-
-
-
-
-	
-		
+	<form method="post" action="after.php" class="formStyle1" onSubmit="beforeSubmit();">
  			
 <div class="title1"><span class="textstyleRed">2XX</span> Lv. CLASSES</div>
+
 
  			<div id='cmsc201' class='content1' class='content1' style="color: GoldenRod;" >
 			<input type="checkbox" dependency='0' name="cmsc2xx[0]" value="CMSC201" id="201" onclick="selected('cmsc201');showMe('cmsc202');"><label for="201"></label>  CMSC 201 
@@ -264,8 +266,10 @@ function test_input($data) {
 			<input type="checkbox" dependency='0' name="cmsc2xx[5]" value="CMSC299" id="299" onclick="selected('cmsc299');"><label for="299"></label> CMSC 299 <span class="textstyleDescription">: (1.00 - 4.00) Independent Study in Computer Science </span> <br> </div>
 
 
+
 	<div class="title1"><span class="textstyleRed">3XX</span> Lv. CLASSES</div>
  		
+
  			<div id='cmsc304' class='content1' style="color: lightgrey;">
 			<input type="checkbox" dependency='0' disabled name="cmsc3xx[0]" value="CMSC304" id="304" onclick="selected('cmsc304');lockprev('cmsc202', 'cmsc304');"><label for="304"></label> CMSC 304 <span class="textstyleDescription">: (3.00) Social and Ethical Issues in Information Technology </span> <br> </div>
 			
@@ -275,6 +279,7 @@ function test_input($data) {
 			
 
  			<div id='cmsc331' class='content1' style="color: lightgrey;">
+
 
 				<input type="checkbox" dependency='0' disabled name="cmsc3xx[2]" value="CMSC331" id="331" onclick="selected('cmsc331');lockprev('cmsc203', 'cmsc331');tworeq('cmsc431', 'cmsc331');showMe('cmsc433');showMe('cmsc432');showMe('cmsc473');"><label for="331"></label>  CMSC 331 <span class="textstyleDescription">: (3.00) Principles of Programming Language </span> <br>
 			</div>
@@ -287,6 +292,7 @@ function test_input($data) {
 			<input type="checkbox" dependency='0' name="cmsc3xx[4]" value="CMSC352" id="352" onclick="selected('cmsc352');"><label for="352"></label>  CMSC 352 <span class="textstyleDescription">: (3.00) Women, Gender, and Information Technology </span> <br></div>
 			<div id='cmsc391' class='content1' style="color: GoldenRod;">
 			<input type="checkbox" dependency='0' name="cmsc3xx[5]" value="CMSC391" id="391" onclick="selected('cmsc391');"><label for="391"></label>  CMSC 391 <span class="textstyleDescription">: (1.00 - 4.00) Special Topics in Computer Science </span> <br></div> 
+
 	
 
 
@@ -296,7 +302,9 @@ function test_input($data) {
 	
 
 			
+
 				<div id='cmsc411' class='content1' style="color: lightgrey;">
+
 				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[0]" value="CMSC411" id="411" onclick="selected('cmsc411');lockprev('cmsc313', 'cmsc411');"><label for="411"></label>  CMSC 411 <span class="textstyleDescription">: (3.00) Computer Architecture </span> <br> </div> 
 
 				<div id='cmsc421' class='content1' style="color: lightgrey;">
@@ -376,8 +384,6 @@ function test_input($data) {
 
 				<div id='cmsc471' class='content1' style="color: lightgrey;"> 
 				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[26]" value="CMSC471" id="471" onclick="selected('cmsc471');lockprev('cmsc341', 'cmsc471');tworeq('cmsc493', 'cmsc471');showMe('cmsc479');showMe('cmsc478');showMe('cmsc477');"><label for="471"></label> CMSC 471 <span class="textstyleDescription">: (3.00) Introduction to Artificial Intelligence </span> <br> </div> 
-
-	
 				
 				<div id='cmsc473' class='content1' style="color: lightgrey;">
 				<input class="400-level-box" type="checkbox" dependency='0' disabled name="cmsc4xx[27]" value="CMSC473" id="473" onclick="selected('cmsc473');lockprev('cmsc331', 'cmsc473');"><label for="473"></label>  CMSC 473 <span class="textstyleDescription">: (3.00) Introduction to Natural Language Processing </span> <br> </div> 
@@ -425,7 +431,6 @@ function test_input($data) {
 		
 				<div id='cmsc499' class='content1' style="color: GoldenRod;">
 				<input class="400-level-box" type="checkbox" dependency='0' name="cmsc4xx[42]" value="CMSC499" id="499" onclick="selected('cmsc499');"><label for="499"></label>  CMSC 499 <span class="textstyleDescription">: (1.00 - 4.00) Independent Study in Computer Science </span> <br> </div> 
-
 		
 	</div> <br/>
 	<div class="title1"><span class="textstyleRed">
@@ -438,9 +443,13 @@ function test_input($data) {
 
 	<script>
        var classes = "<?php Print($classes); ?>";
+       console.log(classes);
        var classArr = classes.split(" ");
        for(var i = 0; i < classArr.length; i++) {
-
+           var cbox = document.getElementById(classArr[i].replace(/\D+/g,''));
+           if(cbox) {
+           cbox.click();
+       		}
        }
 	</script>
 
