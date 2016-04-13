@@ -24,14 +24,14 @@
 	$cmsc2xx=$_POST["cmsc2xx"];
 	$cmsc3xx=$_POST["cmsc3xx"];
 	$cmsc4xx=$_POST["cmsc4xx"];
-	
+	$classes = "";
 
 
 	foreach($_POST as $class) {
-		if($class != "Submit") {
-			if(!(strpos($classes, $class) !== false)) {
+		if($class != "SUBMIT") {
+			//if(!(strpos($classes, $class) !== false)) {
 				$classes .= $class . " ";
-			}
+			//}
 		}
 	}
 
