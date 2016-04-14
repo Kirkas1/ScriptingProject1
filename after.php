@@ -4,7 +4,7 @@
 	/* DATABASE INFO 
 		Change these values to use your own server (requires at least PHP 5)
 	*/
-	$dbHost = "10.200.6.30";
+	$dbHost = "10.200.8.60";
 	$dbName = "scripting";
 	$dbUser = "ikirk";
 	$dbPassword = "umbc";
