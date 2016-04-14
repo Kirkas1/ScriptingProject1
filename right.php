@@ -10,10 +10,13 @@
 
 <script type="text/javascript">
 	
-
+	// Purpose: Remove disabled attribute from all checked boxes
+	// 			When data is posted, disabled attributes are not sent
+	//          regardless of it being checked.
+	//          This function ensures all checked boxes are sent to database
 	function beforeSubmit() {
         var boxes = document.getElementsByTagName('input');
-        console.log("Called");
+        //Debug to check accuracy console.log("Called");
         for(var i = 0; i < boxes.length; i++) {
         	if(boxes[i].checked) {
         		boxes[i].disabled = false;
@@ -161,6 +164,9 @@ if (!empty($_POST))
 
 	
 	if($valid) {
+		/* DATABASE INFO 
+			Change these values to use your own server (requires at least PHP 5)
+		*/
 		$dbHost = "10.200.6.30";
 		$dbName = "scripting";
 		$dbUser = "ikirk";
@@ -181,39 +187,52 @@ if (!empty($_POST))
 		$contactNum=$_POST["contactNum"];
 		$classes = "";
 
+		// SQL Statement to grab current users in database
 		$checkIfInDB = "SELECT name, campusid FROM $dbTable";
 		$inDB = FALSE;
 		$result = $conn->query($checkIfInDB);
 
+		// Iterates over returned users from database
 		if ($result->num_rows > 0) {
 	    	while($row = $result->fetch_assoc()) {
+
+	    		// Checks if the current user's name or campus id matches any in the databse
 		        if ($name == $row["name"] || $campusID == $row["campusID"]) {
 		        	$inDB = TRUE;
 		    	}
 		    }
 		}
+
 		$classesTaken = array();
 
+		// If the user is in the database then we want to load what classes they have taken
 		if($inDB) {
 			$checkClassesTaken = "SELECT name, classes FROM $dbTable";
 			$result = $conn->query($checkClassesTaken);
 
 			if($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
+
+					// Once we found the current user again in the database it takes 
+					// the classes field and creates an array out of it
 					if ($name == $row["name"]) {
 						$classesTaken = explode(" ", $row["classes"]);
 					}
 				}
-			} 
+			}
+
+			// Creates a more usable string from the classesTaken array 
 			foreach($classesTaken as $class) {
 				$classes .= $class . " ";
 			}
 		}
 
+		// Prints out a customized welcome message at the top of the page
 		$nameUpper = strtoupper($name);
 		echo "<br><div><center> WELCOME <span class='textstyleRed'>$nameUpper</span></center><br>";
+		
+		// Saves session variables for the next page, after.php
 		session_start();
-		// At this point the student's $classesTaken variable is correct
 		$_SESSION["name"] = $name;
 		$_SESSION["campusID"] = $campusID;
 		$_SESSION["email"] = $email;
@@ -432,15 +451,24 @@ function test_input($data) {
 	</form>
 
 	<script>
-       var classes = "<?php Print($classes); ?>";
-       console.log(classes);
-       var classArr = classes.split(" ");
-       for(var i = 0; i < classArr.length; i++) {
-           var cbox = document.getElementById(classArr[i].replace(/\D+/g,''));
-           if(cbox) {
-           cbox.click();
-       		}
-       }
+	// Neat way to grab a php variable for javascript
+    var classes = "<?php Print($classes); ?>";
+    // Debug to check accuracy console.log(classes);
+    var classArr = classes.split(" ");
+
+    // Loops through newly split class array to "click" each class in the interface
+    for(var i = 0; i < classArr.length; i++) {
+    	// classArr contains the full class name CMSC201 for example and the ids are 
+    	// named with only the class number 201. 
+    	// The regex here is used to remove the letters so that the element can be
+    	// retrieved easily. 
+    	var cbox = document.getElementById(classArr[i].replace(/\D+/g,''));
+
+    	// After element is retrieved simply click the element
+        if(cbox) {
+        	cbox.click();
+       	}
+    }
 	</script>
 
 
