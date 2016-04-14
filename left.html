@@ -1,61 +1,71 @@
+<!DOCTYPE html PUBLIC "-//w3c//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
-<html>
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<!--
+    CMSC 433 - Group Groject 1
 
+    * File Name: left.html
+
+    * Group Member: 
+        Alex Smith (alex42@umbc.edu)
+        Kayoung Kim (kayoung2@umbc.edu)
+        Ian Kirk (ikirk1@umbc.edu)
+
+    * File Description:
+        Left frame in order to get user input.
+        When a user submit with four inputs:
+        (Student name, Campus ID, Student Email, Contact number),
+        right.php will be reloaded.
+
+-->
 <head>
+<!--START EXTERNEL STYLE SHEET : aki_style.css -->
 <link rel = "stylesheet" href = "aki_style.css" />
-<style type="text/css">
-	#ch{display: :none;}
-	#ch + label{
-        display:inline-block;
-        width:20px;
-        height:20px;
-        border:1px solid #bcbcbc;
-        cursor:pointer;
-        background: #fff;
-        vertical-align: middle;;
-    }
-
-    #ch:checked + label:after{
-        position:relative;
-        top:-3px;
-        left:3px;
-        content: '\2714';
-        font-size:18px;
-    }
-
-
-</style>
+<!--END EXTERNEL STYLE SHEET : aki_style.css -->
 </head>
 
+<!--START BODY -->
 <body class="left">
+
+<!-- LOGO IMAGE -->
 <img src="http://userpages.umbc.edu/~kayoung2/CMSC433/Project/images/logo-retriever1.jpg" width="180px">
 <br/>
 
+<!--START FORM HERE -->
+
 	<form method="post" action="right.php" target="right">
     
-
+        <!-- studentName input-->
     	<label>*  Student<span class="textstyle1"> Name:   </span></label><br/>
     		<input type="text" name="studentName" size="25" required><br/>
+
+        <!-- campusID input-->
 		<label>*  Campus <span class="textstyle1">ID:      </span></label><br/>
 			<input type="text" name="campusID" size="25" required><br/>
+        <!-- email input-->
 		<label>*  Student<span class="textstyle1"> Email:  </span></label><br/>
 			<input type="text" name="email" size="25" required><br/>
+
+        <!-- contactNum input-->
 		<label>  Contact<span class="textstyle1"> Number: </span></label><br/>
-			<input type="text" name="contactNum" size="25"> <br/>
-
-    <br/>
-
+			<input type="text" name="contactNum" size="25"> <br/><br/>
+            
+        <!--START SUBMIT-->
+        <center>
         <input type="submit" class="btn-style"/><br/><br/>
-<br/>
-
+        </center>
+        <!--END SUBMIT-->
+        <br/>
 
 	</form>
 
+<!--END FORM HERE -->
 
 
 
 
-
+<!-- END BODY -->
 </body>
 
 </html>
