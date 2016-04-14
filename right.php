@@ -24,6 +24,22 @@
         }
     }
 
+
+    /****************************************************************************
+	* Function Name: showMe
+	* Param: box - the checkbox you want to toggle on/off
+	*
+	* Used for when the user selects a class checkbox. First checks to see if the
+	* checkbox is disabled. If it is disabled, it enables it and changes the color
+	* to indicate that the user can select it.
+	*
+	* This is used as an onclick event for classes that are requirements for other
+	* classes. 
+	*
+	* Example: 341 requires 203 - in the onclick for 203, adding showMe('cmsc341');
+	* will activate the 341 checkbox and indicate to the user that it is available
+	* for them to take.
+	*****************************************************************************/
 	function showMe (box) {
 
 	    var show = document.getElementById(box);
@@ -40,6 +56,17 @@
 		}   
 	}
 
+
+	/************************************************************************************************
+	* Function Name: selected
+	* Params: box - the class being selected (Use the full class name, ie cmsc201)
+	*
+	* Toggles the class as selected or available. GoldenRod means the class is available,
+	* black means the class is selected.
+	*
+	* Example: If the user selects cmsc201, in the onclick for cmsc201 include selected('cmsc201');
+	*
+	************************************************************************************************/
 	function selected(box) {
 
 		var show = document.getElementById(box);
@@ -56,6 +83,26 @@
 		}
 	}
 
+
+	/************************************************************************************************
+	* Function Name: lockprev
+	* Params: box - the class being selected (Use the full class name, ie cmsc201)
+	*		  prev - the class being locked (because it is a requirement for the class selected)
+	*
+	* Toggles a requirement class as locked or unlocked depending on whether or not a class that 
+	* requires it is selected. Prevents the user from unselecting a class that is a requirement for
+	* another selected class. Uses a string of zeroes stored as 'dependency' in the checkbox elements
+	* to keep track of dependent classes. 
+	*
+	* Example: The user selects 203 then selects 341. Since 341 requires 203, the onlick for 341 will include
+	* lockprev('cmsc203', 'cmsc341'). This will then lock 203 so the user cannot uncheck it without first unchecking
+	* 341 as well. 
+	*
+	* This works even when multiple dependent classes are selected. For instance, selecting 203, then 331 and 341 will
+	* lock 203 until both are unselected. Simply include lockprev('cmsc203', 'cmsc331') in the 331 onclick and 
+	* lockprev('cmsc203', 'cmsc341') in the 341 onclick.
+	*
+	************************************************************************************************/
 	function lockprev(prev, box){
 		var this_show = document.getElementById(box);
 		var this_cbox = document.getElementById(box.replace(/\D/g,''));
@@ -88,6 +135,23 @@
 		}
 	}
 
+
+	/************************************************************************************************
+	* Function Name: tworeq
+	* Params: box - the class being selected (Use the full class name, ie cmsc201)
+	*         require - the class that requires this class to activate.
+	*
+	* Used for classes that have two prerequisite classes. Classes with two prerequisite classes have an additional
+	* attribute in their checkbox element called 'req' initialized with a string that has the number of prereq. classes
+	* + 1 (So a class with 2 prereqs will have a string size of 3, 3 prereqs = 4, etc.). The class will only be marked
+	* as available if all the prerequisite classes for it are also selected. 
+	*
+	* Example: 487 requires both 421 and 481 to take. In the checkbox element for 487, include the attribute req = '000'
+	* since there are two required classes. Then in both the 421 and 481 checkboxes onclick, include tworeq('cmsc487', 'cmsc421');
+	* and tworeq('cmsc487', 'cmsc421') respectively. Now both 421 and 481 need to be selected in order for 487 to become available.
+	* Additionally, unselecting either will make it unavailable.
+	*
+	************************************************************************************************/
 	function tworeq(require, box){
 		var this_show = document.getElementById(box);
 		var this_cbox = document.getElementById(box.replace(/\D/g,''));
