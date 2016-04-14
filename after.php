@@ -26,9 +26,7 @@
 	}
 
 	$classes = $classesTaken;
-	$cmsc2xx=$_POST["cmsc2xx"];
-	$cmsc3xx=$_POST["cmsc3xx"];
-	$cmsc4xx=$_POST["cmsc4xx"];
+	
 	$classes = "";
 
 	// Loops through the posted information from previous page, right.php

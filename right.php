@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//Dbr XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/Dbr/xhtml1-transitional.dbr">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -261,7 +262,7 @@ if (!empty($_POST))
 	    	while($row = $result->fetch_assoc()) {
 
 	    		// Checks if the current user's name or campus id matches any in the databse
-		        if ($name == $row["name"] || $campusID == $row["campusID"]) {
+		        if ($name == $row["name"] || $campusID == $row["campusid"]) {
 		        	$inDB = TRUE;
 		    	}
 		    }
@@ -296,7 +297,7 @@ if (!empty($_POST))
 		echo "<br><div><center> WELCOME <span class='textstyleRed'>$nameUpper</span></center><br>";
 		
 		// Saves session variables for the next page, after.php
-		session_start();
+		
 		$_SESSION["name"] = $name;
 		$_SESSION["campusID"] = $campusID;
 		$_SESSION["email"] = $email;
