@@ -26,6 +26,7 @@
 	}
 
 	$classes = $classesTaken;
+	
 	$classes = "";
 
 	// Loops through the posted information from previous page, right.php
