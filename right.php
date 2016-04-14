@@ -356,13 +356,13 @@ function test_input($data) {
 			
 
  			<div id='cmsc313' class='content1' style="color: lightgrey;">
-			<input type="checkbox" dependency='0' disabled name="CMSC313" value="CMSC313" id="313" onclick="selected('cmsc313');lockprev('cmsc203', 'cmsc313');tworeq('cmsc435', 'cmsc313');tworeq('cmsc421', 'cmsc313');showMe('cmsc411');"><label for="313"></label>  CMSC 313 <span class="textstyleDescription">: (3.00) Computer Organization & Assembly Language Program. </span> <br> </div>
+			<input type="checkbox" dependency='0' disabled name="CMSC313" value="CMSC313" id="313" onclick="selected('cmsc313');lockprev('cmsc203', 'cmsc313');tworeq('cmsc435', 'cmsc313');tworeq('cmsc421', 'cmsc313');showMe('cmsc411');"><label for="313"></label>  CMSC 313 &#9733 <span class="textstyleDescription">: (3.00) Computer Organization & Assembly Language Program. </span> <br> </div>
 			
 
  			<div id='cmsc331' class='content1' style="color: lightgrey;">
 
 
-				<input type="checkbox" dependency='0' disabled name="CMSC331" value="CMSC331" id="331" onclick="selected('cmsc331');lockprev('cmsc203', 'cmsc331');tworeq('cmsc431', 'cmsc331');showMe('cmsc433');showMe('cmsc432');showMe('cmsc473');"><label for="331"></label>  CMSC 331 <span class="textstyleDescription">: (3.00) Principles of Programming Language </span> <br>
+				<input type="checkbox" dependency='0' disabled name="CMSC331" value="CMSC331" id="331" onclick="selected('cmsc331');lockprev('cmsc203', 'cmsc331');tworeq('cmsc431', 'cmsc331');showMe('cmsc433');showMe('cmsc432');showMe('cmsc473');"><label for="331"></label>  CMSC 331 &#9733 <span class="textstyleDescription">: (3.00) Principles of Programming Language </span> <br>
 			</div>
 
 			<div id='cmsc341' class='content1' style="color: lightgrey;">
@@ -378,10 +378,10 @@ function test_input($data) {
 
 				<div id='cmsc411' class='content1' style="color: lightgrey;">
 
-				<input class="400-level-box" type="checkbox" dependency='0' disabled name="CMSC411" value="CMSC411" id="411" onclick="selected('cmsc411');lockprev('cmsc313', 'cmsc411');"><label for="411"></label>  CMSC 411 <span class="textstyleDescription">: (3.00) Computer Architecture </span> <br> </div> 
+				<input class="400-level-box" type="checkbox" dependency='0' disabled name="CMSC411" value="CMSC411" id="411" onclick="selected('cmsc411');lockprev('cmsc313', 'cmsc411');"><label for="411"></label>  CMSC 411 &#9733 <span class="textstyleDescription">: (3.00) Computer Architecture </span> <br> </div> 
 
 				<div id='cmsc421' class='content1' style="color: lightgrey;">
-				<input class="400-level-box" type="checkbox" dependency='0' req='000' disabled name="CMSC421" value="CMSC421" id="421" onclick="selected('cmsc421');lockprev('cmsc313', 'cmsc421');lockprev('cmsc341', 'cmsc421');tworeq('cmsc487', 'cmsc421');showMe('cmsc483');showMe('cmsc426');"><label for="421"></label> CMSC 421 <span class="textstyleDescription">: (3.00) Principles of Operating Systems </span> <br></div> 
+				<input class="400-level-box" type="checkbox" dependency='0' req='000' disabled name="CMSC421" value="CMSC421" id="421" onclick="selected('cmsc421');lockprev('cmsc313', 'cmsc421');lockprev('cmsc341', 'cmsc421');tworeq('cmsc487', 'cmsc421');showMe('cmsc483');showMe('cmsc426');"><label for="421"></label> CMSC 421 &#9733<span class="textstyleDescription">: (3.00) Principles of Operating Systems </span> <br></div> 
 
 				<div id='cmsc426' class='content1' style="color: lightgrey;">
 				<input class="400-level-box" type="checkbox" dependency='0' disabled name="CMSC426" value="CMSC426" id="426" onclick="selected('cmsc426');lockprev('cmsc421', 'cmsc426');"><label for="426"></label> CMSC 426 <span class="textstyleDescription">: (3.00) Principles of Computer Security </span> <br> </div> 
@@ -408,7 +408,7 @@ function test_input($data) {
 				<input class="400-level-box" type="checkbox" dependency='0' disabled name="CMSC437" value="CMSC437" id="437" onclick="selected('cmsc437');lockprev('cmsc341', 'cmsc437');"><label for="437"></label> CMSC 437 <span class="textstyleDescription">: (3.00) Graphical User Interface Programming </span> <br> </div> 
 				
 				<div id='cmsc441' class='content1' style="color: lightgrey;">
-				<input class="400-level-box" type="checkbox" dependency='0' disabled name="CMSC441" value="CMSC441" id="441" onclick="selected('cmsc441');lockprev('cmsc341', 'cmsc441');"><label for="441"></label> CMSC 441 <span class="textstyleDescription">: (3.00) Design and Analysis of Algorithms. </span> <br> </div> 
+				<input class="400-level-box" type="checkbox" dependency='0' disabled name="CMSC441" value="CMSC441" id="441" onclick="selected('cmsc441');lockprev('cmsc341', 'cmsc441');"><label for="441"></label> CMSC 441 &#9733 <span class="textstyleDescription">: (3.00) Design and Analysis of Algorithms. </span> <br> </div> 
 				
 				<div id='cmsc442' class='content1' style="color: GoldenRod;">
 				<input class="400-level-box" type="checkbox" dependency='0' name="CMSC442" value="CMSC442" id="442" onclick="selected('cmsc442');"><label for="442"></label> CMSC 442 <span class="textstyleDescription">: (3.00) Information and Coding Theory </span> <br> </div>
@@ -423,7 +423,7 @@ function test_input($data) {
 				<input class="400-level-box" type="checkbox" dependency='0' name="CMSC446" value="CMSC446" id="446" onclick="selected('cmsc446');"><label for="446"></label>  CMSC 446 <span class="textstyleDescription">: (3.00) Introduction to Design Patterns </span> <br></div> 
 				
 				<div id='cmsc447' class='content1' style="color: lightgrey;">
-				<input class="400-level-box" type="checkbox" dependency='0' disabled name="CMSC447" value="CMSC447" id="447" onclick="selected('cmsc447');lockprev('cmsc341', 'cmsc447');showMe('cmsc448');"><label for="447"></label>  CMSC 447 <span class="textstyleDescription">: (3.00) Software Design and Development </span> <br> </div> 
+				<input class="400-level-box" type="checkbox" dependency='0' disabled name="CMSC447" value="CMSC447" id="447" onclick="selected('cmsc447');lockprev('cmsc341', 'cmsc447');showMe('cmsc448');"><label for="447"></label>  CMSC 447 &#9733 <span class="textstyleDescription">: (3.00) Software Design and Development </span> <br> </div> 
 				
 				<div id='cmsc448' class='content1' style="color: lightgrey;">
 				<input class="400-level-box" type="checkbox" dependency='0' disabled name="CMSC448" value="CMSC448" id="448" onclick="selected('cmsc448');lockprev('cmsc447', 'cmsc448');"><label for="448"></label>  CMSC 448 <span class="textstyleDescription">: (3.00) Software Engineering II </span> <br></div> 
