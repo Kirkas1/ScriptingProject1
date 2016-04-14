@@ -1,13 +1,37 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//w3c//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns = "http://www.w3.org/1999/xhtml">
+
+<!--
+    CMSC 433 - Group Groject 1
+
+    * File Name: main.html
+
+    * Group Member: 
+        Alex Smith (alex42@umbc.edu)
+        Kayoung Kim (kayoung2@umbc.edu)
+        Ian Kirk (ikirk1@umbc.edu)
+
+    * File Description:
+        This html file is main frame for our project.
+        It loads left.html as left frame, and
+        right.php as right frame.
+
+-->
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title> CMSC433 project : Alex,Kayoung,Ian </title>
+
+<!--START EXTERNEL STYLE SHEET : aki_style.css -->
 <link rel = "stylesheet" href = "aki_style.css" />
 </head>
-<frameset cols="250px, " frameborder="0" noresize>
-<frame src="left.html" name="left" ></frame>
-<frame src="right.php" name="right"></frame>
-</frameset>
 
+<!--START FRAMESET : left frame has fixed size = 200px -->
+<frameset cols="200px, " frameborder="0" noresize>
+	<frame src="left.html" name="left"></frame>
+	<frame src="right.php" name="right"></frame>
+</frameset>
+<!--END FRAMESET :-->
 </html>
