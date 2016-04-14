@@ -261,7 +261,7 @@ if (!empty($_POST))
 	    	while($row = $result->fetch_assoc()) {
 
 	    		// Checks if the current user's name or campus id matches any in the databse
-		        if ($name == $row["name"] || $campusID == $row["campusID"]) {
+		        if ($name == $row["name"] || $campusID == $row["campusid"]) {
 		        	$inDB = TRUE;
 		    	}
 		    }
